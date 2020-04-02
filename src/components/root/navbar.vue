@@ -6,7 +6,7 @@
     dark
      >
      <v-app-bar-nav-icon   @click.stop="drawer = !drawer" class="hidden-md-and-up" ></v-app-bar-nav-icon>
-  <div><v-img src="../assets/logo.png" size="20px" height="50%" width="50%"></v-img></div>
+  <div><v-img src="@/assets/logo.png" size="20px" height="50%" width="50%"></v-img></div>
     <v-spacer></v-spacer>
             <v-toolbar-items  class="hidden-sm-and-down pa-2">
              <v-btn text  color="white" @click="$vuetify.goTo('#home')">Home</v-btn>
@@ -19,7 +19,7 @@
   <v-navigation-drawer
       v-model="drawer"
       app
-      left
+      top
      dark
     >
     <v-list  >

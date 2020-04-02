@@ -10,9 +10,9 @@
 
 <script>
 
-import foot from './components/foot';
-import navbar from './components/navbar';
-import contents from './components/contents';
+import foot from './components/root/foot';
+import navbar from './components/root/navbar';
+import contents from './components/root/contents';
 export default {
   name: 'App',
 
