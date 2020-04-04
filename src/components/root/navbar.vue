@@ -8,24 +8,24 @@
      <v-app-bar-nav-icon   @click.stop="drawer = !drawer" class="hidden-md-and-up" ></v-app-bar-nav-icon>
   <div><v-img src="@/assets/logo.png" size="20px" height="50%" width="50%"></v-img></div>
     <v-spacer></v-spacer>
-            <v-toolbar-items  class="hidden-sm-and-down pa-2">
-             <v-btn text  color="white" @click="$vuetify.goTo('#home')">Home</v-btn>
-          <v-btn text  color="white"  @click="$vuetify.goTo('#projects')">Projects</v-btn>
-          <v-btn text   color="white"  @click="$vuetify.goTo('#contact-me')">Contact Us</v-btn>
-          <v-btn text  color="white" @click="$vuetify.goTo('#about-me')"> About</v-btn>
+            <v-toolbar-items  class="hidden-sm-and-down pa-2 toolbar">
+             <v-btn text  color="white"  @click="$vuetify.goTo('#home')" :class="{'is-active' : active}">Home</v-btn>
+          <v-btn text  color="white"  @click="$vuetify.goTo('#projects')" :class="{'is-active' : active}">Projects</v-btn>
+          <v-btn text   color="white"  @click="$vuetify.goTo('#contact-me')" :class="{'is-active' : active}">Contact Us</v-btn>
+          <v-btn text  color="white" @click="$vuetify.goTo('#about-me')" :class="{'is-active' : active}"> About</v-btn>
             </v-toolbar-items>
     </v-app-bar>
        </v-card>
   <v-navigation-drawer
       v-model="drawer"
       app
-      top
+      left
      dark
     >
     <v-list  >
         <v-list-item>
         <v-list-item-content >
-           <v-subheader class="white--text">More Options</v-subheader>
+             <div><v-img src="@/assets/logo.png"  height="30%" width="30%"></v-img></div>
         </v-list-item-content>
            <v-spacer></v-spacer>
             <v-icon  @click.stop="drawer = !drawer" color="white">mdi-close</v-icon>
@@ -67,7 +67,18 @@ export default {
       data(){
           return{
               drawer: false,
+              active:false
           }
-      }
+      },
+        
+      
 }
 </script>
+<style >
+.is-active {
+
+  border-bottom: 2px solid rgb(238, 87, 0);
+  transform: scaleX(1);  
+  transition: transform 250ms ease-in-out;
+}
+</style>

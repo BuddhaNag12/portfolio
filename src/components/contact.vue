@@ -3,23 +3,27 @@
           <v-parallax
           :height="$vuetify.breakpoint.smAndDown ? 1100: 900"
           src="../assets/projects/para2.jpg"
-        >
-
-        <v-container fluid >
-          <v-card>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57936.66815884068!2d92.7486197782311!3d24.828245470714357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e4a625ae8cddd%3A0x1783d41a15380398!2sSilchar%2C%20Assam!5e0!3m2!1sen!2sin!4v1576426840177!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          </v-card>
-     </v-container>
+        >     
+             <div class="py-12"></div>
+         <div class="font-weight-bold white--text  display-2 text-sm-center text-center" >CONTACT ME!</div>  
+            <v-responsive
+            class="mx-auto "
+            width="200"
+          >
+           <v-divider class="mb-2 white"></v-divider>
+ 
+          </v-responsive>
       <v-container fluid>
           <v-row no-gutters>
               <v-col class="sm-12 md-6 lg-6 text-sm-left" data-aos="fade-up-right">
-            <div class="font-weight-bold white--text  caption" >Contact Info</div>  
-          <div class=" font-italic body-1 white--text  text-left" >Please feel free to reach out to us with your questions and comments.</div>
+            <div class="font-weight-bold white--text  caption text-center" >Contact Info</div>  
+            <br>
+          <div class=" font-italic body-1 white--text  text-center" >Please feel free to reach out to us with your questions and comments.</div>
+               <br>
           <div class=" white--text text-left pt-2">Email</div>
           <div class="text-left">
-        <a href="" class="white--text  text--darken-3 body-1">@MAIL</a>
+        <a href="mailto:rahulnag514@gmail.com" class="white--text  text--darken-3 body-1" target="_top">rahulnag514@gmail.com</a>
           </div>
-  
               </v-col>
               <v-col cols="12" sm="6" data-aos="fade-up-left">
                     <div>Write Us</div>
@@ -48,6 +52,13 @@
               </v-col>
           </v-row>
       </v-container>
+      
+        <v-container fluid >
+          <v-card-text class="text-center">Site View</v-card-text>
+          <v-card>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57936.66815884068!2d92.7486197782311!3d24.828245470714357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e4a625ae8cddd%3A0x1783d41a15380398!2sSilchar%2C%20Assam!5e0!3m2!1sen!2sin!4v1576426840177!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </v-card>
+     </v-container>
           </v-parallax>
     </section>
 </template>

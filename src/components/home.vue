@@ -29,7 +29,7 @@
               <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
 
                     <br>
-  
+          
                   </v-col>
 
                   <v-btn
