@@ -20,9 +20,9 @@
                   >
 
                       <span
-                      :class="[$vuetify.breakpoint.smAndDown ? 'display-1': 'display-3']"
+                      :class="[$vuetify.breakpoint.smAndDown ? 'font-30': 'font-40']"
                       class="typed-text"
-                      style="animation: bounce 3s 1;"
+                  
                     >
                      {{ typeValue }}
                     </span>
@@ -34,11 +34,11 @@
 
                   <v-btn
                     class="align-self-end"
-                    fab
-                    outlined
+                    text
+                    fab                    
                     @click="$vuetify.goTo('#about-me')"
                   >
-                    <v-icon>mdi-chevron-double-down</v-icon>
+                    <v-icon class="animate">mdi-chevron-double-down</v-icon>
                   </v-btn>
                 </v-row>
               </v-container>
@@ -117,8 +117,20 @@ export default {
 
 <style  scoped>
  
+
+    .animate{
+      animation:slide 0.9s ease alternate infinite;
+    }
+
+    @keyframes slide {
+      to{
+        transform: translateY(10px);
+      }
+    }
     span.typed-text {
       color: rgb(255, 255, 255);
+      font-family: 'Orbitron', sans-serif;
+      
     }
     span.cursor {
   
@@ -136,5 +148,11 @@ export default {
     49% { background-color: #fff; }
     50% { background-color: transparent; }
     99% { background-color: transparent; }
+  }
+  .font-40{
+    font-size: 40px;
+  }
+  .font-40{
+    font-size: 30px;
   }
 </style>

@@ -1,14 +1,16 @@
 <template>
         <section
         id="projects"
-        class="grey lighten-3"
       >
        <v-parallax
-          :height="$vuetify.breakpoint.smAndDown ? 1200: 900"
+          :height="$vuetify.breakpoint.smAndDown ? 1300: 700"
           src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         >
+         <div class="py-12"></div>  
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">PROJECTS</h2>
+       <h2 class=" font-weight-bold mb-3 white--text about" data-aos="zoom-in-up"
+                data-aos-offset="200"
+            data-aos-delay="50">PROJECTS</h2>
            <v-responsive
             class="mx-auto mb-12"
             width="180"
@@ -24,7 +26,7 @@
         cols="12"
         sm="3"
        v-for="(projects,i) in projects" :key="i"
-       data-aos="fade-up"
+       data-aos="zoom-in-up"
       >
        <v-hover v-slot:default="{ hover }"   class="mx-2 mt-2">
         <v-card
@@ -40,7 +42,7 @@
       :src="projects.img"
       
     >
-     <h1 class=" text-uppercase pa-2 blue--text"  >{{projects.name}}</h1>
+     <h1 class=" text-uppercase pa-2 black--text text--darken-3"  >{{projects.name}}</h1>
      <v-expand-transition>
         <template>
           <div
@@ -93,14 +95,3 @@ export default {
  }
 }
 </script>
-
-<style >
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-</style>
