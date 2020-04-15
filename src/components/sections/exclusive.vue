@@ -168,6 +168,7 @@
   </section>
 </template>
 
+
 <style >
 .exclusive {
   background: #272727; /* fallback for old browsers */
@@ -189,7 +190,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translate(10px);
+    transform: translateY(10px);
   }
 }
 @keyframes move {
