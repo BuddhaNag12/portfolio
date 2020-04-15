@@ -1,27 +1,26 @@
 <template>
-    <div>
-              <loading/>
-              <scrollup/>
-                 <home/>
-              <aboutMe/>
-            <projects/>
-       <exclusive/>
-         <contact/>
-    </div>
+  <div>
+    <loading />
+    <scrollup />
+    <home />
+    <aboutMe />
+    <projects />
+    <exclusive />
+    <contact />
+  </div>
 </template>
 
 
 <script>
 export default {
-    components:{
-
-            loading:()=>import('@/components/loading'),
-            scrollup:()=>import('@/components/scrollup'),
-            home:()=>import('@/components/home'),
-            aboutMe:()=>import('@/components/about'),
-            contact:()=>import('@/components/contact'),
-            projects:()=>import('@/components/projects'),
-            exclusive:()=>import('@/components/exclusive'),
-    }
-}
+  components: {
+    loading: () => import("@/components/utils/loading"),
+    scrollup: () => import("@/components/utils/scrollup"),
+    home: () => import("@/components/sections/home"),
+    aboutMe: () => import("@/components/sections/about"),
+    contact: () => import("@/components/sections/contact"),
+    projects: () => import("@/components/sections/projects"),
+    exclusive: () => import("@/components/sections/exclusive")
+  }
+};
 </script>
