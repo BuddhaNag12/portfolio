@@ -1,7 +1,7 @@
 <template>
   <nav>
     <v-card class="overflow-hidden" tile>
-      <v-app-bar app dark>
+      <v-app-bar app dark >
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
         <div>
           <v-img src="@/assets/logo.png" size="20px" height="50%" width="50%"></v-img>

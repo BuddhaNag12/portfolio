@@ -1,6 +1,6 @@
 <template>
   <v-footer height="auto" elevation="5" padless tile>
-    <v-card flat tile color="#424242" class="lighten-1 white--text text-center flex">
+    <v-card  tile color="#272727" class="lighten-1 white--text text-center flex">
       <v-card-text class>
         <v-btn v-for="icon in icons" :key="icon" class="mx-3" dark icon>
           <v-icon size="20px" @click="link(icon)">{{icon}}</v-icon>
@@ -11,9 +11,7 @@
         MADE WITH
         <v-icon color="red">mdi-heart</v-icon>BUDDHA
       </v-card-text>
-
-      <v-divider></v-divider>
-
+      <v-divider color="white"></v-divider>
       <v-card-text class="white--text text-center">
         {{ new Date().getFullYear() }} —
         <strong>BUDDHA</strong>

@@ -3,7 +3,13 @@
     <div class="py-12"></div>
     <v-container class="text-center">
       <v-row no-gutters>
-        <v-col sm="12" xs="12" data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="500">
+        <v-col
+          sm="12"
+          xs="12"
+          data-aos="fade-in"
+          data-aos-delay="50"
+          data-aos-duration="500"
+        >
           <h2 class="font-weight-bold mb-3 white--text about">ABOUT ME</h2>
         </v-col>
       </v-row>
@@ -14,45 +20,42 @@
         <v-col
           cols="12"
           sm="6"
-          data-aos="zoom-in-up"
+          data-aos="fade-in"
           data-aos-delay="400"
           data-aos-easing="ease-in-out"
           data-aos-duration="500"
         >
           <h1 class="white--text">Quotes</h1>
           <v-icon size="40" color="#ECE9E6">mdi-comment-text-outline</v-icon>
+          <p class="font-weight-light mt-3 white--text  text-uppercase">
+            Hey there i am a web developer I know javascript and no sql and sql
+            database handling and i'm full stack web developer i like to
+            contribute to open source project and verry passionate about open
+            source programming
+          </p>
           <p
             class="font-weight-light mt-3 white--text newfont text-uppercase"
-          >Hey there i am a web developer javascript programmer a student of Computer science and full stack web developer</p>
+            data-aos="zoom-in-up"
+            data-aos-delay="400"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="500"
+          >
+            i have 3 + years experience in doing small projects as well as
+            solving skills in algorithms
+          </p>
         </v-col>
-        <v-col cols="12" sm="6" data-aos-delay="400" data-aos="fade-up" data-aos-duration="500">
-          <h1 class="font-weight-bold mb-3 white--text newfont">Languages Known</h1>
+        <v-col
+          cols="12"
+          sm="6"
+          data-aos-delay="400"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <h1 class="font-weight-bold mb-3 white--text newfont text-capitalize">
+            little info about what i use
+          </h1>
           <v-icon size="40" color="#ECE9E6">mdi-console-line</v-icon>
-          <v-progress-linear value="80" color="purple" height="25">
-            <strong class="pr-2 white--text">JAVA</strong>
-            <strong>{{ Math.ceil(java) }}%</strong>
-          </v-progress-linear>
-          <br />
-          <v-progress-linear value="80" color="green" height="25">
-            <strong class="pr-2 white--text">C/C++</strong>
-            <strong>{{ Math.ceil(c) }}%</strong>
-          </v-progress-linear>
-          <br />
-          <v-progress-linear value="80" color="blue-grey" height="25">
-            <strong class="pr-2 white--text">Javascript</strong>
-            <strong>{{ Math.ceil(javascript) }}%</strong>
-          </v-progress-linear>
-          <br />
-          <v-progress-linear value="90" height="25">
-            <strong class="pr-2 white--text">HTML & CSS</strong>
-            <strong>{{ Math.ceil(html) }}%</strong>
-          </v-progress-linear>
-          <br />
-
-          <v-progress-linear value="60" height="25" color="red darken-2">
-            <strong class="pr-2 white--text">vuejs</strong>
-            <strong>{{ Math.ceil(vuejs) }}%</strong>
-          </v-progress-linear>
+          <chips />
         </v-col>
         <v-col cols="12">
           <v-avatar class="mr-3" color="grey lighten-5" size="150">
@@ -68,15 +71,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      javascript: "80",
-      vuejs: "60",
-      java: "65",
-      c: "55",
-      html: "90"
-    };
-  }
+  components: {
+    chips: () => import("../tabs"),
+  },
 };
 </script>
 
@@ -105,4 +102,10 @@ export default {
   font-size: 20px;
   font-family: "Orbitron", sans-serif;
 }
+
+/* @media only screen and (max-width: 600px) {
+.about-me {
+     border-bottom-right-radius: 30%;
+  }
+} */
 </style>

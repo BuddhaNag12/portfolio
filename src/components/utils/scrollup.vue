@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-icon
+   <v-icon
       class="animate"
       color="white"
       id="scrollup"
       v-scroll="onScroll"
+       v-show="fab"
       @click="$vuetify.goTo('#home')"
-      v-show="fab"
     >mdi-arrow-up</v-icon>
   </div>
 </template>
@@ -45,8 +45,5 @@ export default {
   right: 30px;
 }
 
-.animate:hover {
-  border-radius: 40px;
-  background-color: dimgray;
-}
+
 </style>

@@ -2,10 +2,11 @@
   <section id="contact-me">
     <div class="text-center">
       <v-dialog v-model="dialog" width="500">
-        <v-card>
-          <v-card-title class="headline grey lighten-2" primary-title>Info</v-card-title>
-          <v-card-text>
-            <v-alert type="success">Message sent</v-alert>
+        <v-card dark>
+          <v-card-title class="headline  lighten-2" primary-title>Info</v-card-title>
+          <v-card-text >
+              <v-alert type="red" v-if="err">{{err}}</v-alert>
+               <v-alert type="success" v-else>Message sent</v-alert>
           </v-card-text>
 
           <v-divider></v-divider>
@@ -89,6 +90,7 @@ export default {
       email: "",
       msg: "",
       dialog: false,
+      err:'',
       msgrule: [
         v => !!v || "Message is required",
         v =>
@@ -105,8 +107,11 @@ export default {
   methods: {
     feedback: function() {
       if (this.email == "" && this.msg == "") {
-        return false;
+        this.dialog=true;
+        this.err="Enter Valid Keyword!!!";
+         return false;
       } else {
+        this.err="";
         db.collection("feedbacks")
           .doc()
           .set({
@@ -118,8 +123,9 @@ export default {
             this.msg = "";
             this.dialog = true;
           })
-          .catch(function(error) {
+          .catch((error)=> {
             console.error("Error writing document: ", error);
+            this.err=error
           });
       }
     }

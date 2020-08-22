@@ -22,8 +22,5 @@ export default {
     foot
   },
 
-  data: () => ({
-    //
-  }),
 };
 </script>
