@@ -1,5 +1,5 @@
 <template>
-  <section id="projects">
+  <section class="Gitprojects">
     <div class="py-6"></div>
     <v-container class="text-center">
       <h2
@@ -89,7 +89,7 @@ export default {
   mounted() {
     this.loading = true;
     axios
-      .get("https://api.github.com/users/BuddhaNag12/repos?sort=updated")
+      .get("https://api.github.com/users/BuddhaNag12/repos?sort=updated&per_page=9")
       .then((res) => {
         const Newdata = res.data;
         Newdata.map((data) => {
@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style scoped>
-#projects {
+.Gitprojects {
   background: #232526; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
