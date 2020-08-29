@@ -44,7 +44,7 @@
           data-aos-delay="50"
           data-aos-duration="500"
         >
-          <v-card dark class="mx-auto">
+          <v-card id="card" class="mx-auto">
             <v-card-text>
               <h1 class="white--text text-capitalize">{{ projects.name }}</h1>
             </v-card-text>
@@ -59,7 +59,7 @@
             <v-card-actions class="d-flex justify-space-around mx-auto">
               <v-btn
                 color="#FFF176"
-                class="white--text"
+                class="white--text btn"
                 block
                 outlined
                 @click="RouteTo(projects.html_url)"
@@ -83,28 +83,6 @@ export default {
       show: false,
       gitProjects: [],
       loading: false,
-      // projects: [
-      //   {
-      //     name: "Ecommerce Website",
-      //     img: require("@/assets/proj1.png"),
-      //     route: "project1",
-      //   },
-      //   {
-      //     name: "MirrorBase",
-      //     img: require("@/assets/proj4.png"),
-      //     route: "firebase",
-      //   },
-      //   {
-      //     name: "Mark input system",
-      //     img: require("@/assets/proj2.png"),
-      //     route: "project2",
-      //   },
-      //   {
-      //     name: "Find tuitor system",
-      //     img: require("@/assets/proj3.png"),
-      //     route: "project3",
-      //   },
-      // ],
     };
   },
 
@@ -128,23 +106,6 @@ export default {
     RouteTo(url) {
       window.open(url, "_blank");
     },
-    // link(parms) {
-    //   if (parms == "project1") {
-    //     window.open(
-    //       "https://github.com/BuddhaNag12/Ecommerce-webapp",
-    //       "_blank"
-    //     );
-    //   } else if (parms == "project2") {
-    //     window.open("https://github.com/BuddhaNag12/MarkInputSystem", "_blank");
-    //   } else if (parms == "project3") {
-    //     window.open(
-    //       "https://github.com/BuddhaNag12/College_webproject",
-    //       "_blank"
-    //     );
-    //   } else if (parms == "firebase") {
-    //     window.open("https://github.com/BuddhaNag12/MirrorBase", "_blank");
-    //   }
-    // },
   },
 };
 </script>
@@ -162,13 +123,14 @@ export default {
     #414345,
     #232526
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  margin: 0%;
 }
 
-/* @media only screen and (max-width: 600px) {
-  #projects {
-     border-top-left-radius: 30%;
-  }
-} */
+.btn {
+  border-radius: 35px;
+}
+#card {
+  border-radius: 25px;
+  background: #333333;
+  box-shadow: 10px 10px 10px #282828, -10px -10px 10px #3e3e3e;
+}
 </style>

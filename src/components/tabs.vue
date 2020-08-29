@@ -66,10 +66,11 @@
             md="6"
             class="d-flex justify-space-between mx-auto"
           >
-            <v-chip-group class="pl-4 mx-auto">
+            <v-chip-group column >
               <v-chip> <div>Firebase</div></v-chip>
               <v-chip><div>MySql</div></v-chip>
               <v-chip> <div>GraphQl</div></v-chip>
+              <v-chip> <div>SQL</div></v-chip>
             </v-chip-group>
           </v-col>
         </v-row>
@@ -83,11 +84,11 @@
             md="6"
             class="d-flex justify-space-between mx-auto ma-2"
           >
-          <v-chip-group class="pl-4 mx-auto">
-            <v-chip> <div>Maven</div></v-chip>
-            <v-chip> <div>Mern</div></v-chip>
-            <v-chip> <div>Nuxtjs + firebase</div></v-chip>
-          </v-chip-group>
+            <v-chip-group column >
+              <v-chip> <div>MEVN</div></v-chip>
+              <v-chip> <div>Mern</div></v-chip>
+              <v-chip> <div>Nuxtjs + firebase</div></v-chip>
+            </v-chip-group>
           </v-col>
         </v-row>
       </v-tab-item>

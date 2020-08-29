@@ -1,25 +1,7 @@
 <template>
   <section id="contact-me">
-    <div class="text-center">
-      <v-dialog v-model="dialog" width="500">
-        <v-card dark>
-          <v-card-title class="headline  lighten-2" primary-title>Info</v-card-title>
-          <v-card-text >
-              <v-alert type="red" v-if="err">{{err}}</v-alert>
-               <v-alert type="success" v-else>Message sent</v-alert>
-          </v-card-text>
-
-          <v-divider></v-divider>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false">close</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </div>
     <v-parallax
-      :height="$vuetify.breakpoint.smAndDown ? 1100: 900"
+      :height="$vuetify.breakpoint.smAndDown ? 1100 : 900"
       src="../../assets/projects/para2.jpg"
     >
       <div class="py-12"></div>
@@ -28,18 +10,23 @@
         data-aos="zoom-in-up"
         data-aos-offset="200"
         data-aos-delay="50"
-      >CONTACT ME!</div>
+      >
+        CONTACT ME!
+      </div>
       <v-responsive class="mx-auto" width="200">
         <v-divider class="mb-2 white"></v-divider>
       </v-responsive>
       <v-container fluid>
         <v-row no-gutters>
-          <v-col class="sm-12 md-6 lg-6 text-sm-left" data-aos="fade-up-right">
-            <div class="font-weight-bold white--text caption text-center">Contact Info</div>
+          <v-col class="sm-12 md-6 lg-6 text-sm-left" data-aos="fade-up">
+            <div class="font-weight-bold white--text caption text-center">
+              Contact Info
+            </div>
             <br />
-            <div
-              class="font-italic body-1 white--text text-center"
-            >Please feel free to reach out to us with your questions and comments.</div>
+            <div class="font-italic body-1 white--text text-center">
+              Please feel free to reach out to us with your questions and
+              comments.
+            </div>
             <br />
             <div class="white--text text-left pt-2">Email</div>
             <div class="text-left">
@@ -47,18 +34,40 @@
                 href="mailto:rahulnag514@gmail.com"
                 class="white--text text--darken-3 body-1"
                 target="_top"
-              >rahulnag514@gmail.com</a>
+                >rahulnag514@gmail.com</a
+              >
             </div>
           </v-col>
-          <v-col cols="12" sm="6" data-aos="fade-up-left">
+          <v-col cols="12" sm="6" data-aos="fade-up" class="pl-5">
             <div>Write Us</div>
-            <v-card flat dark>
+            <v-card dark flat id="card">
+              <div v-if="isSent" class="pl-5">Message Sent</div>
               <v-card-text>
-                <form @submit.prevent="feedback">
-                  <v-text-field label="EMAIL" v-model="email" type="email" :rules="emailRules"></v-text-field>
-                  <v-textarea label="Leave a Message" v-model="msg" color="teal" :rules="msgrule"></v-textarea>
-                  <v-btn class="secondary" type="submit">Submit</v-btn>
-                </form>
+                <v-form ref="form" v-model="valid" lazy-validation>
+                  <v-textarea
+                    v-model="msg"
+                    :counter="20"
+                    :rules="msgrule"
+                    label="Your message"
+                    required
+                  ></v-textarea>
+
+                  <v-text-field
+                    v-model="email"
+                    :rules="emailRules"
+                    label="E-mail"
+                    required
+                  ></v-text-field>
+
+                  <v-btn
+                    :disabled="!valid"
+                    color="success"
+                    class="mr-4"
+                    @click="submit"
+                  >
+                    Submit
+                  </v-btn>
+                </v-form>
               </v-card-text>
             </v-card>
           </v-col>
@@ -85,50 +94,74 @@
 <script>
 import db from "../../fb";
 export default {
-  data() {
-    return {
-      email: "",
-      msg: "",
-      dialog: false,
-      err:'',
-      msgrule: [
-        v => !!v || "Message is required",
-        v =>
-          (v && v.length >= 10) ||
-          "Message must be Greater or equal than 10 characters"
-      ],
-      emailRules: [
-        v => !!v || "E-mail is required",
-        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
-    };
-  },
+  data: () => ({
+    err: "",
+    isSent: false,
+    valid: true,
+    msg: "",
+    msgrule: [
+      (v) => !!v || "Name is required",
+      (v) => (v && v.length <= 20) || "Name must be less than 10 characters",
+    ],
+    email: "",
+    emailRules: [
+      (v) => !!v || "E-mail is required",
+      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+    ],
+  }),
 
   methods: {
-    feedback: function() {
-      if (this.email == "" && this.msg == "") {
-        this.dialog=true;
-        this.err="Enter Valid Keyword!!!";
-         return false;
-      } else {
-        this.err="";
+    submit() {
+      if (this.$refs.form.validate()) {
         db.collection("feedbacks")
           .doc()
           .set({
             email: this.email,
-            messages: this.msg
+            messages: this.msg,
           })
           .then(() => {
             this.email = "";
             this.msg = "";
-            this.dialog = true;
+            this.$refs.form.resetValidation();
+            this.isSent = true;
           })
-          .catch((error)=> {
+          .catch((error) => {
             console.error("Error writing document: ", error);
-            this.err=error
+            this.err = error;
           });
       }
-    }
-  }
+    },
+    // feedback: function() {
+    //   if (this.email == "" && this.msg == "") {
+    //     this.dialog = true;
+    //     this.err = "Enter Valid Keyword...";
+    //     return false;
+    //   } else {
+    //     this.err = "";
+    //     db.collection("feedbacks")
+    //       .doc()
+    //       .set({
+    //         email: this.email,
+    //         messages: this.msg,
+    //       })
+    //       .then(() => {
+    //         this.email = "";
+    //         this.msg = "";
+    //         this.dialog = true;
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error writing document: ", error);
+    //         this.err = error;
+    //       });
+    //   }
+    // },
+  },
 };
 </script>
+<style scoped>
+#card {
+  border-radius: 25px;
+  background: #333333;
+  box-shadow: 10px 10px 10px #282828, -10px -10px 10px #3e3e3e;
+}
+</style>

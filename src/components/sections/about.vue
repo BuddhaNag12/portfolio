@@ -59,7 +59,9 @@
         </v-col>
         <v-col cols="12">
           <v-avatar class="mr-3" color="grey lighten-5" size="150">
-            <v-img src="../../assets/images/profile.jpeg"></v-img>
+            <v-img
+              src="https://scontent.fgau2-1.fna.fbcdn.net/v/t1.0-9/106093797_3105706246172854_6244516452109243435_n.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=rLXEZNCVHwQAX-hHU11&_nc_ht=scontent.fgau2-1.fna&oh=64b3b7c4db0211aa6bb53499cd0050dd&oe=5F6EDB93"
+            ></v-img>
           </v-avatar>
           <h2 class="myname text-uppercase white--text">buddha nag</h2>
         </v-col>
