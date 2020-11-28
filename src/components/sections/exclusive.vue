@@ -3,7 +3,7 @@
     <v-container class="text-center">
       <h2
         class="font-weight-bold mb-3 white--text about"
-        data-aos="zoom-in-up"
+        data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
       >EXCLUSIVE PORTFOLIO</h2>

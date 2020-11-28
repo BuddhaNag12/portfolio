@@ -7,7 +7,7 @@
       <div class="py-12"></div>
       <div
         class="font-weight-bold white--text text-sm-center text-center about"
-        data-aos="zoom-in-up"
+        data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
       >
@@ -41,12 +41,12 @@
           <v-col cols="12" sm="6" data-aos="fade-up" class="pl-5">
             <div>Write Us</div>
             <v-card dark flat id="card">
-              <div v-if="isSent" class="pl-5">Message Sent</div>
+              <div v-if="isSent" class="pl-5 success text-center">Message Sent successfully thank u we will get back to u</div>
               <v-card-text>
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <v-textarea
                     v-model="msg"
-                    :counter="20"
+                    :counter="200"
                     :rules="msgrule"
                     label="Your message"
                     required
@@ -100,8 +100,8 @@ export default {
     valid: true,
     msg: "",
     msgrule: [
-      (v) => !!v || "Name is required",
-      (v) => (v && v.length <= 20) || "Name must be less than 10 characters",
+      (v) => !!v || "Message is required",
+      (v) => (v && v.length <= 200) || "Message must be less than 200 characters",
     ],
     email: "",
     emailRules: [
