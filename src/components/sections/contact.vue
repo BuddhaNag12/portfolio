@@ -41,7 +41,7 @@
           <v-col cols="12" sm="6" data-aos="fade-up" class="pl-5">
             <div>Write Us</div>
             <v-card dark flat id="card">
-              <div v-if="isSent" class="pl-5 success text-center">Message Sent successfully thank u we will get back to u</div>
+              <div v-if="isSent" class="pl-5 success text-center">Message Sent successfully</div>
               <v-card-text>
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <v-textarea

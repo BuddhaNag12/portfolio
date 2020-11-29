@@ -20,9 +20,9 @@
         <div>Stacks</div>
       </v-tab>
       <v-tab-item>
-        <v-row>
+        <v-row class="mx-auto">
           <v-col cols="12" sm="6" md="4" lg="6" class="mx-auto">
-            <v-chip-group column active-class="primary--text" class="pl-4">
+            <v-chip-group column active-class="primary--text " class="pl-4" >
               <v-chip>
                 <v-icon size="30">mdi-language-javascript</v-icon>
               </v-chip>
@@ -58,7 +58,7 @@
         </v-row>
       </v-tab-item>
       <v-tab-item>
-        <v-row>
+        <v-row class="mx-auto">
           <v-col
             cols="12"
             sm="6"
@@ -76,7 +76,7 @@
         </v-row>
       </v-tab-item>
       <v-tab-item>
-        <v-row>
+        <v-row class="mx-auto">
           <v-col
             cols="12"
             sm="6"

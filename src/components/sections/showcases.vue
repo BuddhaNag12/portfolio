@@ -1,16 +1,8 @@
 <template>
   <section id="projects">
-    <div class="bg">
+    <div class="background"> 
       <v-container>
-        <div class="text-center">
-          <v-sheet
-            color="purple darken-1 white--text mx-auto font-weight-bold showcase mb-5"
-            width="52%"
-            elevation="3"
-          >
-            Project Showcase
-          </v-sheet>
-        </div>
+        <div class="text-center showcase">Showcases</div>
 
         <v-row>
           <v-col v-for="(i, index) in showcases" :key="index">
@@ -22,6 +14,7 @@
               data-aos="fade-in-up"
               data-aos-offset="200"
               data-aos-delay="50"
+              width="300"
             >
               <v-carousel
                 cycle
@@ -109,23 +102,13 @@ export default {
 </script>
 
 <style scoped>
-.bg {
-  background: #ffeeee; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ddefbb,
-    #ffeeee
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ddefbb,
-    #ffeeee
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 .showcase {
   font-family: "Orbitron", sans-serif;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#eee, rgb(224, 87, 33));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .image:hover {
@@ -135,5 +118,9 @@ export default {
   border-radius: 25px;
   background: #f5f5f5;
   box-shadow: 10px 10px 10px #bfbfbf, -10px -10px 10px #ffffff;
+}
+
+.background{
+background: #eee;
 }
 </style>
